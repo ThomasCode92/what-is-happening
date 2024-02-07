@@ -1,4 +1,12 @@
-import { Links, LiveReload, Meta, Scripts } from '@remix-run/react';
+import { LinksFunction } from '@remix-run/node';
+import { Links, LiveReload, Meta, Outlet, Scripts } from '@remix-run/react';
+import appStyles from "~/styles/global.css";
+import tailwindStyles from "~/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: tailwindStyles },
+  { rel: "stylesheet", href: appStyles }
+];
 
 export default function App() {
   return (
@@ -10,9 +18,16 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <h1>What is happening</h1>
-        <Scripts />
-        <LiveReload />
+        <div className="container mx-auto">
+          <h1 className="text-3xl font-bold">
+            What's happening
+          </h1>
+          <div id="detail">
+            <Outlet />
+          </div>
+          <Scripts />
+          <LiveReload />
+        </div>
       </body>
     </html>
   );

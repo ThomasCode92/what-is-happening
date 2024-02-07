@@ -1,0 +1,18 @@
+.events__page {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.events__content {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 3px;
+}
+
+.events__single {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
